@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Setup net platform constants -->
+  <PropertyGroup Condition=" '$(TargetFrameworkVersion)' != '' ">
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v2.0' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;ONLY_2_0</DefineConstants>
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v3.5' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;NET_3_5;ONLY_3_5</DefineConstants>
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v4.0' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;NET_3_5;NET_4_0;ONLY_4_0</DefineConstants>
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v4.5' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;NET_3_5;NET_4_0;NET_4_5;ONLY_4_5</DefineConstants>
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v4.5.1' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;NET_3_5;NET_4_0;NET_4_5;NET_4_5_1;ONLY_4_5_1</DefineConstants>
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v4.5.2' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;NET_3_5;NET_4_0;NET_4_5;NET_4_5_1;NET_4_5_2;ONLY_4_5_2</DefineConstants>
+    <DefineConstants Condition=" '$(TargetFrameworkVersion)' == 'v4.6' ">$(DefineConstants);NET_1_0;NET_1_1;NET_2_0;NET_3_5;NET_4_0;NET_4_5;NET_4_5_1;NET_4_5_2;NET_4_6;ONLY_4_6</DefineConstants>
+  </PropertyGroup>
+
+</Project>
