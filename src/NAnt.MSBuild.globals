@@ -12,6 +12,7 @@
     <WarningLevel>4</WarningLevel>
     <DefineConstants Condition=" '$(DefineConstants)' != '' ">$(DefineConstants);TRACE</DefineConstants>
     <DefineConstants Condition=" '$(DefineConstants)' == '' ">TRACE</DefineConstants>
+    <Bootstrapped Condition=" '$(Bootstrapped)' == '' ">false</Bootstrapped>
   </PropertyGroup>
 
   <!-- Settings based on platform and configuration settings -->
@@ -26,13 +27,29 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
   </PropertyGroup>
-  
-  <PropertyGroup>
+
+  <Choose>
+    <When Condition="$(Bootstrapped)">
+      <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Bootstrap|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+        <OutputPath Condition=" '$(OutputPathPrefix)' != '' ">$(OutputPathPrefix)\bootstrap\</OutputPath>
+        <OutputPath Condition=" '$(OutputPathPrefix)' == '' ">..\..\bootstrap\</OutputPath>
+      </PropertyGroup>
+    </When>
+  </Choose>
+
+  <PropertyGroup Condition=" '$(OutputPath)' == '' ">
     <OutputPath Condition=" '$(OutputPathPrefix)' != '' ">$(OutputPathPrefix)\build\$(Configuration)\</OutputPath>
     <OutputPath Condition=" '$(OutputPathPrefix)' == '' ">..\..\build\$(Configuration)\</OutputPath>
-    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)' != 'Bootstrap' ">
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+  
   <ItemGroup Condition=" '$(AssemblyInfoPath)' != '' ">
     <Compile Include="$(AssemblyInfoPath)\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>

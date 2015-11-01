@@ -6,6 +6,7 @@
     <RootNamespace>NAnt.Win32</RootNamespace>
     <AssemblyName>NAnt.Win32Tasks</AssemblyName>
     <OutputType>Library</OutputType>
+    <Bootstrapped>true</Bootstrapped>
   </PropertyGroup>
   <ItemGroup>
     <None Include="**\*.build" Exclude="bin;obj" />

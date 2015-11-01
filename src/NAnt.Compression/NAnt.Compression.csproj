@@ -6,6 +6,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>NAnt.Compression</RootNamespace>
     <AssemblyName>NAnt.Compression</AssemblyName>
+    <Bootstrapped>true</Bootstrapped>
   </PropertyGroup>
   <ItemGroup>
     <None Include="**\*.build" Exclude="bin;obj"/>

@@ -6,6 +6,7 @@
     <RootNamespace>NAnt.Console</RootNamespace>
     <AssemblyName>NAnt</AssemblyName>
     <OutputType>Exe</OutputType>
+    <Bootstrapped>true</Bootstrapped>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -32,10 +33,16 @@
       <Project>{B50A1067-785B-4686-8FFC-5AF424BEF163}</Project>
       <Name>NAnt.DotNet</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NAnt.Win32\NAnt.Win32.csproj">
+      <Project>{C66545A2-6FEC-4A38-937A-5B25E61EE8A1}</Project>
+      <Name>NAnt.Win32</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NAnt.MSBuild\NAnt.MSBuild.csproj">
       <Project>{318C04B2-D982-4243-9C6A-CA7E035E927D}</Project>
       <Name>NAnt.MSBuild</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' != 'Bootstrap' ">
     <ProjectReference Include="..\NAnt.MSNet\NAnt.MSNet.csproj">
       <Project>{ED13C268-36DE-49CE-B347-C2BE03F814B9}</Project>
       <Name>NAnt.MSNet</Name>
@@ -67,10 +74,6 @@
     <ProjectReference Include="..\NAnt.VSNet\NAnt.VSNet.csproj">
       <Project>{DD434690-B4DF-4BF9-91FE-F139A41E2474}</Project>
       <Name>NAnt.VSNet</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NAnt.Win32\NAnt.Win32.csproj">
-      <Project>{C66545A2-6FEC-4A38-937A-5B25E61EE8A1}</Project>
-      <Name>NAnt.Win32</Name>
     </ProjectReference>
     <ProjectReference Include="..\NDoc.Documenter.NAnt\NDoc.Documenter.NAnt.csproj">
       <Project>{841FAEBA-4527-410A-B765-E2EDA47ABDCE}</Project>

@@ -6,6 +6,7 @@
     <RootNamespace>NAnt.DotNet</RootNamespace>
     <AssemblyName>NAnt.DotNetTasks</AssemblyName>
     <OutputType>Library</OutputType>
+    <Bootstrapped>true</Bootstrapped>
   </PropertyGroup>
   <ItemGroup>
     <None Include="**\*.build" Exclude="bin;obj"/>
