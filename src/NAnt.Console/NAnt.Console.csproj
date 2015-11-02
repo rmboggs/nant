@@ -90,4 +90,18 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <!-- Ensure that the 'libs' subdirectory is copied to the bootstrap directory when building -->
+  <Target Name="BeforeBuild">
+    <PropertyGroup>
+      <LibsName>lib</LibsName>
+      <LibsTargetPath>$(OutputPath)$(LibsName)</LibsTargetPath>
+    </PropertyGroup>
+    <ItemGroup>
+      <BootstrapLibs Include="..\..\$(LibsName)\**\*"/>
+    </ItemGroup>
+    <Copy 
+      Condition="!Exists('$(LibsTargetPath)')"
+      SourceFiles="@(BootstrapLibs)"
+      DestinationFiles="@(BootstrapLibs -> '$(LibsTargetPath)\%(RecursiveDir)%(Filename)%(Extension)')"/>
+  </Target>
 </Project>
