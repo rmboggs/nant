@@ -10,8 +10,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="App.config" />
-    <None Include="**\*.build" Exclude="bin;obj"/>
-    <Compile Include="**\*.cs" Exclude="bin;obj"/>
+    <None Include="**\*.build" Exclude="bin\**\*;obj\**\*"/>
+    <Compile Include="**\*.cs" Exclude="bin\**\*;obj\**\*"/>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

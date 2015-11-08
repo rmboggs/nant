@@ -10,8 +10,11 @@
     <AssemblyInfoPath>..\src</AssemblyInfoPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="**\*.build" Exclude="bin;obj"/>
-    <Compile Include="**\*.cs" Exclude="bin;obj"/>
+    <None Include="**\*.build" Exclude="bin\**\*;obj\**\*"/>
+    <Compile Include="**\*.cs" Exclude="bin\**\*;obj\**\*"/>
+    <Compile Include="..\src\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
     <EmbeddedResource Include="NAnt.Core\Framework.config" />
   </ItemGroup>
   <ItemGroup>

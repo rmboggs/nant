@@ -8,8 +8,11 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="**\*.build" Exclude="bin;obj" />
-    <Compile Include="**\*.cs" Exclude="bin;obj" />
+    <None Include="**\*.build" Exclude="bin\**\*;obj\**\*"/>
+    <Compile Include="**\*.cs" Exclude="bin\**\*;obj\**\*"/>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Content Include="Resources\*.xslt" />
   </ItemGroup>
   <ItemGroup>

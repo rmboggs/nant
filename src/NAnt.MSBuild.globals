@@ -50,16 +50,4 @@
     <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
   
-  <ItemGroup Condition=" '$(AssemblyInfoPath)' != '' ">
-    <Compile Include="$(AssemblyInfoPath)\CommonAssemblyInfo.cs">
-      <Link>CommonAssemblyInfo.cs</Link>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(AssemblyInfoPath)' == '' ">
-    <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>CommonAssemblyInfo.cs</Link>
-    </Compile>
-  </ItemGroup>
-
 </Project>
